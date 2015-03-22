@@ -56,7 +56,7 @@ combineDataSet <- function(){
         selectedColumnNames <- columnNames[1:2] ## We need subjectId and ActivityName columns for sure.
         
         columnsWithStd <- columnNames[grepl("std()",columnNames,fixed = TRUE)] ## Gets Column Names which have std() and mean() in them.
-        columnsWithMean <- columnName[ grepl("mean()", columnNames,fixed = TRUE)]
+        columnsWithMean <- columnNames[ grepl("mean()", columnNames,fixed = TRUE)]
         selectedColumnNames <- append(selectedColumnNames,columnsWithMean)
         selectedColumnNames <- append(selectedColumnNames,columnsWithStd) ## Final list of Columns that we need for Step 2.
         dsWithStdAndMeanForFeaturesOnly <- combinedDataSet[,selectedColumnNames,with=FALSE]
